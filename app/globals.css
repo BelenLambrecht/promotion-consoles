@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+}
+
+.hover-effect {
+  transition: all 1.5s ease;
+  width: 55%;
+  position: relative;
+  z-index: 1;
+}
+
+.hover-effect:hover {
+  width: 55%;
+  z-index: 2;
+  flex: 55vw;
+}
+
+.hover-effect:hover .image-container {
+  opacity: 1; /* Cambia la opacidad del div de la imagen al pasar el mouse */
+}
+
+.image-container {
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  height: 100%; /* Asegura que el contenedor ocupe todo el alto */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+  position: absolute; /* Permite que el contenedor se ajuste al div padre */
+  top: 0; /* Asegura que el contenedor esté alineado en la parte superior */
+  left: 0; /* Asegura que el contenedor esté alineado a la izquierda */
+  opacity: 0.6; /* Opacidad inicial */
+  transition: opacity 1.8s ease; /* Transición suave para la opacidad */
+}
+
+.images{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.hover-effect h1 {
+  transition: all 1.8s ease;
+}
+
+.hover-effect:hover h1 {
+  opacity: 0.6; /* Cambia la opacidad del h1 al pasar el mouse */
+  transform: translateY(-130px); /* Desplaza el h1 hacia arriba */
+  color: gray; /* Cambia el color del texto a gris */
+  transition: opacity 1.8s ease, transform 1.8s ease, color 1.8s ease; /* Transición suave para la opacidad, el desplazamiento y el color */
+}
